@@ -80,6 +80,11 @@ export function Sidebar({ className }: SidebarProps) {
       icon: MessageCircle,
     },
     {
+      title: "Emergency",
+      href: "/dashboard/emergency",
+      icon: Wrench,
+    },
+    {
       title: "Appointments",
       href: "/dashboard/appointments",
       icon: Calendar,

@@ -7,7 +7,8 @@ import {
   ShoppingCart, 
   CreditCard, 
   MessageSquare, 
-  Calendar 
+  Calendar,
+  AlertTriangle 
 } from "lucide-react";
 
 import { StatCard } from "@/components/dashboard/stat-card";
@@ -25,6 +26,9 @@ interface DashboardStats {
   thisMonthUsers: number;
   thisMonthListings: number;
   thisMonthOrders: number;
+  totalEmergencyRequests: number;
+  pendingEmergencyRequests: number;
+  thisMonthEmergencyRequests: number;
 }
 
 interface ChartData {
@@ -54,6 +58,9 @@ export default function DashboardPage() {
     thisMonthUsers: 0,
     thisMonthListings: 0,
     thisMonthOrders: 0,
+    totalEmergencyRequests: 0,
+    pendingEmergencyRequests: 0,
+    thisMonthEmergencyRequests: 0,
   });
   const [chartData, setChartData] = useState<ChartData[]>([]);
   const [recentActivities, setRecentActivities] = useState<RecentActivity[]>([]);
@@ -78,6 +85,9 @@ export default function DashboardPage() {
         thisMonthUsersResult,
         thisMonthListingsResult,
         thisMonthOrdersResult,
+        totalEmergencyResult,
+        pendingEmergencyResult,
+        thisMonthEmergencyResult,
       ] = await Promise.allSettled([
         supabase.from('users').select('*', { count: 'exact', head: true }),
         supabase.from('cars').select('*', { count: 'exact', head: true }).eq('status', 'active'),
@@ -87,6 +97,9 @@ export default function DashboardPage() {
         supabase.from('users').select('*', { count: 'exact', head: true }).gte('created_at', firstDayOfMonth),
         supabase.from('cars').select('*', { count: 'exact', head: true }).gte('created_at', firstDayOfMonth),
         supabase.from('orders').select('*', { count: 'exact', head: true }).gte('created_at', firstDayOfMonth),
+        supabase.from('emergency_requests').select('*', { count: 'exact', head: true }),
+        supabase.from('emergency_requests').select('*', { count: 'exact', head: true }).eq('status', 'pending'),
+        supabase.from('emergency_requests').select('*', { count: 'exact', head: true }).gte('created_at', firstDayOfMonth),
       ]);
 
       const getCount = (result: any) => 
@@ -101,6 +114,9 @@ export default function DashboardPage() {
         thisMonthUsers: getCount(thisMonthUsersResult),
         thisMonthListings: getCount(thisMonthListingsResult),
         thisMonthOrders: getCount(thisMonthOrdersResult),
+        totalEmergencyRequests: getCount(totalEmergencyResult),
+        pendingEmergencyRequests: getCount(pendingEmergencyResult),
+        thisMonthEmergencyRequests: getCount(thisMonthEmergencyResult),
       });
 
       // Fetch chart data for the last 12 months
@@ -308,13 +324,13 @@ export default function DashboardPage() {
           }}
         />
         <StatCard
-          title="Total Orders"
-          value={isLoading ? "..." : stats.totalOrders.toLocaleString()}
-          icon={<ShoppingCart className="h-4 w-4" />}
-          description="Orders from tire/battery shop"
+          title="Emergency Requests"
+          value={isLoading ? "..." : stats.pendingEmergencyRequests.toLocaleString()}
+          icon={<AlertTriangle className="h-4 w-4" />}
+          description={`${stats.totalEmergencyRequests} total requests`}
           trend={{ 
-            value: stats.thisMonthOrders, 
-            isPositive: true
+            value: stats.thisMonthEmergencyRequests, 
+            isPositive: false
           }}
         />
       </div>
