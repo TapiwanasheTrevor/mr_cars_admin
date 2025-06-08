@@ -141,7 +141,7 @@ export default function EmergencyPage() {
 
       // If we have emergency data, fetch user profiles
       if (emergencyData && emergencyData.length > 0) {
-        const userIds = [...new Set(emergencyData.map(req => req.user_id))];
+        const userIds = Array.from(new Set(emergencyData.map(req => req.user_id)));
         
         // Try to fetch from profiles table
         const { data: profilesData, error: profilesError } = await supabase
