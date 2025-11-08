@@ -4,23 +4,29 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
-import { 
-  BarChart3, 
-  Users, 
-  Car, 
-  ShoppingCart, 
-  CreditCard, 
-  Calendar, 
-  Bell, 
-  Settings, 
-  LogOut, 
-  ChevronLeft, 
+import {
+  BarChart3,
+  Users,
+  Car,
+  ShoppingCart,
+  CreditCard,
+  Calendar,
+  Bell,
+  Settings,
+  LogOut,
+  ChevronLeft,
   ChevronRight,
   LayoutDashboard,
   MessageSquare,
   Package,
   Wrench,
-  MessageCircle
+  MessageCircle,
+  Award,
+  TrendingUp,
+  Mail,
+  DollarSign,
+  Shield,
+  BadgeCheck
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -70,6 +76,36 @@ export function Sidebar({ className }: SidebarProps) {
       icon: CreditCard,
     },
     {
+      title: "Service Providers",
+      href: "/dashboard/service-providers",
+      icon: Wrench,
+    },
+    {
+      title: "Subscriptions",
+      href: "/dashboard/subscriptions",
+      icon: Award,
+    },
+    {
+      title: "Analytics",
+      href: "/dashboard/analytics",
+      icon: TrendingUp,
+    },
+    {
+      title: "Messages",
+      href: "/dashboard/messages",
+      icon: Mail,
+    },
+    {
+      title: "Payments",
+      href: "/dashboard/payments",
+      icon: DollarSign,
+    },
+    {
+      title: "Payment Verification",
+      href: "/dashboard/payment-verification",
+      icon: BadgeCheck,
+    },
+    {
       title: "Inquiries",
       href: "/dashboard/inquiries",
       icon: MessageSquare,
@@ -93,6 +129,11 @@ export function Sidebar({ className }: SidebarProps) {
       title: "Notifications",
       href: "/dashboard/notifications",
       icon: Bell,
+    },
+    {
+      title: "Security",
+      href: "/dashboard/security",
+      icon: Shield,
     },
     {
       title: "Settings",
