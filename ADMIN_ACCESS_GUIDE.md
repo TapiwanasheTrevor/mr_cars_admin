@@ -3,8 +3,8 @@
 ## 🔐 Quick Access Information
 
 ### **Your Project Details**
-- **Supabase Project ID**: `doqdyntkcuqawjhkfijm`
-- **Supabase URL**: `https://doqdyntkcuqawjhkfijm.supabase.co`
+- **Supabase Project ID**: `fmaxqpvwjpnzwraprrud`
+- **Supabase URL**: `https://fmaxqpvwjpnzwraprrud.supabase.co`
 - **Admin Dashboard**: https://mr-cars-admin.vercel.app
 - **Login Page**: https://mr-cars-admin.vercel.app/auth/login
 
@@ -17,7 +17,7 @@
 **Read the full guide here**: [SUPABASE_CORS_FIX.md](./SUPABASE_CORS_FIX.md)
 
 **Quick Fix:**
-1. Go to: https://supabase.com/dashboard/project/doqdyntkcuqawjhkfijm/auth/url-configuration
+1. Go to: https://supabase.com/dashboard/project/fmaxqpvwjpnzwraprrud/auth/url-configuration
 2. Set **Site URL** to: `https://mr-cars-admin.vercel.app`
 3. Add **Redirect URLs**:
    - `https://mr-cars-admin.vercel.app/*`
@@ -28,7 +28,7 @@
 
 ### **Step 2: Create Your Admin Account**
 
-1. Go to: https://supabase.com/dashboard/project/doqdyntkcuqawjhkfijm/auth/users
+1. Go to: https://supabase.com/dashboard/project/fmaxqpvwjpnzwraprrud/auth/users
 2. Click **"Add user"** → **"Create new user"**
 3. Fill in:
    ```
@@ -161,10 +161,10 @@ Password: [Your secure password - at least 8 characters]
 
 ### **Supabase Dashboard Access:**
 - **Main Dashboard**: https://supabase.com/dashboard
-- **Project Dashboard**: https://supabase.com/dashboard/project/doqdyntkcuqawjhkfijm
-- **Table Editor**: https://supabase.com/dashboard/project/doqdyntkcuqawjhkfijm/editor
-- **SQL Editor**: https://supabase.com/dashboard/project/doqdyntkcuqawjhkfijm/sql
-- **Authentication**: https://supabase.com/dashboard/project/doqdyntkcuqawjhkfijm/auth/users
+- **Project Dashboard**: https://supabase.com/dashboard/project/fmaxqpvwjpnzwraprrud
+- **Table Editor**: https://supabase.com/dashboard/project/fmaxqpvwjpnzwraprrud/editor
+- **SQL Editor**: https://supabase.com/dashboard/project/fmaxqpvwjpnzwraprrud/sql
+- **Authentication**: https://supabase.com/dashboard/project/fmaxqpvwjpnzwraprrud/auth/users
 
 ### **Important Tables:**
 - `users` - All registered users
@@ -217,7 +217,7 @@ npm run start
 
 ### **Open Supabase Dashboard:**
 ```bash
-open https://supabase.com/dashboard/project/doqdyntkcuqawjhkfijm
+open https://supabase.com/dashboard/project/fmaxqpvwjpnzwraprrud
 ```
 
 ### **Open Admin Login:**

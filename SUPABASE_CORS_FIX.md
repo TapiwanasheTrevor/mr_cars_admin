@@ -3,7 +3,7 @@
 ## 🚨 Problem
 Getting CORS error when trying to login on deployed Vercel site:
 ```
-Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource at https://doqdyntkcuqawjhkfijm.supabase.co/auth/v1/token
+Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource at https://fmaxqpvwjpnzwraprrud.supabase.co/auth/v1/token
 ```
 
 ## ✅ Solution
@@ -11,7 +11,7 @@ Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remot
 ### **Step 1: Configure Supabase Authentication URLs**
 
 1. Go to your Supabase Dashboard:
-   - URL: https://supabase.com/dashboard/project/doqdyntkcuqawjhkfijm
+   - URL: https://supabase.com/dashboard/project/fmaxqpvwjpnzwraprrud
    - Or visit: https://supabase.com/dashboard and select your project
 
 2. Navigate to **Authentication** → **URL Configuration**
@@ -54,8 +54,8 @@ Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remot
 4. Ensure these variables are set for **Production**, **Preview**, and **Development**:
 
    ```
-   NEXT_PUBLIC_SUPABASE_URL=https://doqdyntkcuqawjhkfijm.supabase.co
-   NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRvcWR5bnRrY3VxYXdqaGtmaWptIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDA1MDYzNDIsImV4cCI6MjA1NjA4MjM0Mn0.Mw_yjnmw3lhjTOpLmxoDgq7-hO1OJWAIf28b-XzlUOQ
+   NEXT_PUBLIC_SUPABASE_URL=https://fmaxqpvwjpnzwraprrud.supabase.co
+   NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZtYXhxcHZ3anBuendyYXBycnVkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjA2ODM0MTYsImV4cCI6MjA3NjI1OTQxNn0.c5j3zK0tvgrA_mve-0AGW0n8yP80OeFApfhzGDXsvn4
    ```
 
 5. If you added/changed variables, **redeploy** your site:
@@ -120,7 +120,7 @@ npm install -g supabase
 supabase login
 
 # Link your project
-supabase link --project-ref doqdyntkcuqawjhkfijm
+supabase link --project-ref fmaxqpvwjpnzwraprrud
 
 # Update auth config
 supabase config api.external_url=https://mr-cars-admin.vercel.app
@@ -131,9 +131,9 @@ supabase config api.external_url=https://mr-cars-admin.vercel.app
 ## 📱 Quick Access Links
 
 **Supabase Dashboard:**
-- Project: https://supabase.com/dashboard/project/doqdyntkcuqawjhkfijm
-- Auth Config: https://supabase.com/dashboard/project/doqdyntkcuqawjhkfijm/auth/url-configuration
-- Users: https://supabase.com/dashboard/project/doqdyntkcuqawjhkfijm/auth/users
+- Project: https://supabase.com/dashboard/project/fmaxqpvwjpnzwraprrud
+- Auth Config: https://supabase.com/dashboard/project/fmaxqpvwjpnzwraprrud/auth/url-configuration
+- Users: https://supabase.com/dashboard/project/fmaxqpvwjpnzwraprrud/auth/users
 
 **Vercel Dashboard:**
 - Project: https://vercel.com/dashboard
